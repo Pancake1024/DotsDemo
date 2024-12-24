@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7460132340101415816
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: basic_up_000
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _METALLICSPECGLOSSMAP
+  - _NORMALMAP
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 37d7cd3dc86c9394b960e3937811b6ab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 914a654509a15944aaa471ef716be25b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ClearCoatCubeTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DeaclMap0:
+        m_Texture: {fileID: 2800000, guid: 5dee7043d31f9dd4a9daade8c9815f79, type: 3}
+        m_Scale: {x: 0.25, y: 0.25}
+        m_Offset: {x: 0.25, y: 0}
+    - _DeaclMap1:
+        m_Texture: {fileID: 2800000, guid: 88ff9cef62ea1d54f9cdbad6f202a08c, type: 3}
+        m_Scale: {x: 0.25, y: 0.25}
+        m_Offset: {x: 0.25, y: 0.25}
+    - _DeaclMap2:
+        m_Texture: {fileID: 2800000, guid: 944e8b260a32291439569d05d12a109d, type: 3}
+        m_Scale: {x: 0.25, y: 0.25}
+        m_Offset: {x: 0.25, y: 0.25}
+    - _DecalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlipbookTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FrecklesMap:
+        m_Texture: {fileID: 2800000, guid: 3289b602daf4638428eb92da9c4c4017, type: 3}
+        m_Scale: {x: 1.6, y: 1.6}
+        m_Offset: {x: -0.22, y: -0.39}
+    - _KelemenLUT:
+        m_Texture: {fileID: 2800000, guid: 35755d9c35167234d86e4348ee295876, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 37d7cd3dc86c9394b960e3937811b6ab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Matcap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: f2064c6a94746364eb5d19e0d6f35e32, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoleMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 150, y: 150}
+        m_Offset: {x: 0, y: 0}
+    - _PartedColorMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SSSLUT:
+        m_Texture: {fileID: 2800000, guid: 17053288c1d9b2844908303897b807d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ScrollLayerTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpaceMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SparkleMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularTex:
+        m_Texture: {fileID: 2800000, guid: f2064c6a94746364eb5d19e0d6f35e32, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _BaseColorOverEmission: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _BumpScale: 1
+    - _CheekIntensity: 0.572
+    - _ClearCoat: 0
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _CubemapStrength: 1
+    - _Cull: 2
+    - _CurvatureScale: 1
+    - _Custom_Color_Compute: 0
+    - _CutThresHold: 100
+    - _Cutoff: 0.5
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
+    - _Emmission: 0
+    - _EnvironmentReflections: 1
+    - _ExternalLightStrength3: 0
+    - _EyeShadowIntensity: 1
+    - _FrecklesIntensity: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0.534
+    - _GlossinessScale: 0.827
+    - _GlossinessSkinColor: 0.6
+    - _GlossyReflections: 0
+    - _IsGlobalEmissionCtrl: 0
+    - _IsGlobalEmissionCtrl1: 0
+    - _IsSelect: 0
+    - _KelemenRadiancy: 0.88
+    - _LitStickIntensity: 0.5
+    - _Metallic: 0
+    - _MoleIntensity: 0.513
+    - _NormalBlurredBias: 0
+    - _OcAlpha: 1
+    - _OcclusionStrength: 0.572
+    - _OffsetFactor: 0
+    - _OffsetUnits: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _SSRIntensity: 0
+    - _Saturation2: 0
+    - _Smoothness: 1
+    - _SmoothnessTextureChannel: 0
+    - _SparkleDepth1: 0
+    - _SparkleDepth2: 0
+    - _SparkleDepth3: 0
+    - _SparkleDiffuseRate: 1
+    - _SparkleNoiseSize: 1
+    - _SparklePower: 10
+    - _SparkleRimRate: 1
+    - _SparkleSpecularRate: 1
+    - _SparkleSpeed: 0.1
+    - _SpecularHighlights: 1
+    - _SpecularModel: 1
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _StencilCap: 0
+    - _StencilComp: 8
+    - _StencilEnabled: 0
+    - _StencilFailOp: 0
+    - _StencilMask: 15
+    - _StencilPassFun: 0
+    - _StencilPassOp: 0
+    - _StencilRefNum: 0
+    - _StencilValue: 0
+    - _Surface: 0
+    - _TextureScale: 1
+    - _Thickness: 1
+    - _ThinFilm: 0
+    - _Tonemap: 0.876
+    - _TriplanarBlendSharpness: 100
+    - _USECLOTHMATCAP: 0
+    - _USE_CLOTH_ANISO: 0
+    - _USE_FILPBOOKANI: 0
+    - _Use_Deacl: 1
+    - _Use_DecalMap: 0
+    - _Use_Parted_Color: 0
+    - _Use_Scroll_Layer: 0
+    - _Use_Sparkle: 0
+    - _Use_TriPlanarMap: 0
+    - _Use_Vertex_Color: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    - _ZWriteControl: 0
+    - _eta: 0
+    - _filpbookType: 0
+    - _matcapPow: 0
+    - _specularSaturation: 1
+    m_Colors:
+    - _AddColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Anisotropy: {r: 0.8, g: 0.7, b: 1, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CheekIntensity: {r: 0.562, g: 0, b: 0, a: 0}
+    - _ClearCoatCubeStrength: {r: 1, g: 0.5, b: 0, a: 5}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DeaclColor0: {r: 1, g: 0, b: 0, a: 1}
+    - _DeaclColor1: {r: 1, g: 0.683, b: 0.63, a: 1}
+    - _DeaclColor2: {r: 0.953, g: 0.563, b: 0.615, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EyeShadowIntensity: {r: 0.673, g: 0, b: 0.094, a: 0.034}
+    - _FlipbookColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FlipbookScale: {r: 1, g: 0, b: 0, a: 1}
+    - _FrPro: {r: 0, g: 0, b: 0, a: 0}
+    - _Frc: {r: 1, g: 1, b: 1, a: 1}
+    - _FrecklesColor: {r: 0.49056602, g: 0.16806827, b: 0, a: 1}
+    - _LitStickIntensity: {r: 0.58, g: 0, b: 0, a: 0}
+    - _MoleColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PartedColor0: {r: 1, g: 1, b: 1, a: 1}
+    - _PartedColor1: {r: 1, g: 1, b: 1, a: 1}
+    - _PartedColor2: {r: 1, g: 1, b: 1, a: 1}
+    - _PartedColor3: {r: 1, g: 1, b: 1, a: 1}
+    - _RowColumFrameTime: {r: 4, g: 4, b: 1, a: 1}
+    - _ScrollLayerColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ScrollLayerParam: {r: 1, g: 1, b: 0.1, a: 0.01}
+    - _ScrollLayerSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _SparkleColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _clothesMatcapPow: {r: 0, g: 0, b: 0, a: 0}
+    - _matcapLerpColorA: {r: 0, g: 0, b: 0, a: 1}
+    - _matcapLerpColorB: {r: 0, g: 0, b: 0, a: 1}
+    - _matcapLerpColorG: {r: 0, g: 0, b: 0, a: 1}
+    - _matcapLerpColorR: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
