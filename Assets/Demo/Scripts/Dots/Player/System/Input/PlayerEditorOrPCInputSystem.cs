@@ -31,6 +31,8 @@ namespace Pancake.ECSDemo
                     forward.y = 0;
                     right.y = 0;
                     movement = forward * movement.z + right * movement.x;
+                    input.InputX = inputX;
+                    input.InputY = inputY;
                     input.Movement = math.lengthsq(movement) > 0 ? math.normalize(movement) : float3.zero;
                     
                     // Jump

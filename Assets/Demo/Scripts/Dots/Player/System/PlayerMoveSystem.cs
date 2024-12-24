@@ -2,6 +2,7 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
 
 namespace Pancake.ECSDemo
 {
@@ -37,9 +38,8 @@ namespace Pancake.ECSDemo
             in PlayerInputComponent input, 
             in PlayerOnGroundComponent onGroundComp)
         {
-            var state = stateComp.State;
             if (!onGroundComp.IsOnGround || 
-                !(state == PlayerState.Idle || state == PlayerState.Move || state == PlayerState.Jump_End))
+                !StateUtility.CanMove(stateComp))
             {
                 return;
             }
@@ -47,7 +47,8 @@ namespace Pancake.ECSDemo
             float3 translation = moveComp.MoveSpeed * input.Movement * deltaTime;
             localTransform = localTransform.Translate(translation);
             bool isMoving = math.lengthsq(translation) > 0;
-            stateComp.State = isMoving ? PlayerState.Move : PlayerState.Idle;
+            var state = isMoving ? PlayerState.Move : PlayerState.Idle;
+            StateUtility.TryAddState(ref stateComp, state);
         }
     }
 }

@@ -34,7 +34,8 @@ namespace Pancake.ECSDemo
                 for (int i = 0; i < events.Length; i++)
                 {
                     var e = events[i];
-                    stateComp.State = PlayerState.Idle;
+                    StateUtility.TryAddState(ref stateComp, PlayerState.Idle);
+                    // stateComp.State = PlayerState.Idle;
                     Debug.LogError($"OnCastSkillActEndJob Entity Index：{entity.Index}");
                 }
 

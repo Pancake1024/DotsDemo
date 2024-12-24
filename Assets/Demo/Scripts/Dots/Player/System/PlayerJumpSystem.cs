@@ -41,10 +41,10 @@ namespace Pancake.ECSDemo
         {
             var state = stateComp.State;
             //玩家按下跳跃键，且在地面上，且没有在跳跃
-            if (input.IsJump && onGroundComp.IsOnGround && 
-                (state == PlayerState.Idle || state == PlayerState.Move || state == PlayerState.Jump_End))
+            if (input.IsJump && onGroundComp.IsOnGround && StateUtility.CanJump(stateComp))
             {
-                stateComp.State = PlayerState.Jumping;
+                StateUtility.TryAddState(ref stateComp, PlayerState.Jumping);
+                // stateComp.State = PlayerState.Jumping;
                 jumpComp.JumpSpeed = math.sqrt(2 * jumpComp.JumpHeight * jumpComp.Gravity);
                 jumpComp.StartMovement = input.Movement;
             }
@@ -62,7 +62,7 @@ namespace Pancake.ECSDemo
                     if (onGroundComp.IsOnGround)
                     {
                         jumpComp.Time = 0;
-                        stateComp.State = PlayerState.Jump_End;
+                        StateUtility.TryAddState(ref stateComp, PlayerState.Jump_End);
                     }
                 }
             }
@@ -72,7 +72,7 @@ namespace Pancake.ECSDemo
                 jumpComp.Time += deltaTime;
                 if (jumpComp.Time >= jumpComp.JumpEndDuration)
                 {
-                    stateComp.State = PlayerState.Idle;
+                    StateUtility.TryAddState(ref stateComp, PlayerState.Idle);
                 }
             }
         }

@@ -36,12 +36,10 @@ namespace Pancake.ECSDemo
             in PlayerStateComponent stateComp, 
             in PlayerInputComponent input)
         {
-            if (stateComp.State == PlayerState.Jumping || stateComp.State == PlayerState.CastSkill)
-            {
-                return;
-            }
+            if (!StateUtility.CanRotate(stateComp)) return;
+            
             var movement = input.Movement;
-            if (math.lengthsq(movement) > 0)
+            if (input.InputX != 0)
             {
                 quaternion targetRotation = quaternion.LookRotation(movement, localTransform.Up());
                 localTransform.Rotation = math.slerp(localTransform.Rotation,targetRotation, rotateComp.RotateSpeed  * deltaTime);

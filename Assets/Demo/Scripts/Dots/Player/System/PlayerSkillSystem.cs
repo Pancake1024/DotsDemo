@@ -44,27 +44,16 @@ namespace Pancake.ECSDemo
             var castSkillID = _TryGetCastSkillId(skillIds, input.UsedSkillSlot);
             if (castSkillID == -1)return;
             Debug.LogError($"Try Cast skill id: {castSkillID}");
-            if (_CanCastSkill(stateComp))
+            if (StateUtility.CanCastActiveSkill(stateComp))
             {
                 Debug.LogError($"Cast skill id: {castSkillID} Success");
-                stateComp.State = PlayerState.CastSkill;
+                StateUtility.TryAddState(ref stateComp, PlayerState.CastSkill);
                 _CreateSkill(ecb,entityIndex, entity, castSkillID);
             }
             else
             {
                 Debug.LogError($"Cast skill id: {castSkillID} Failed");
             }
-        }
-        
-        private bool _CanCastSkill(PlayerStateComponent stateComp)
-        {
-            var state = stateComp.State;
-            if (state == PlayerState.Idle || state == PlayerState.Move || state == PlayerState.Jump_End || state == PlayerState.CastSkillEnd)
-            {
-                return true;
-            }
-
-            return false;
         }
         
         private int _TryGetCastSkillId(DynamicBuffer<PlayerSkillIdElement> skillIdElements, int slot)

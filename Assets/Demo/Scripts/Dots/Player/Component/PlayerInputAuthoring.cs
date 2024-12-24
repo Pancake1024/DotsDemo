@@ -21,6 +21,8 @@ namespace Pancake.ECSDemo
     
     public struct PlayerInputComponent : IComponentData
     {
+        public float InputX;
+        public float InputY;
         public float3 Movement;
         public bool IsJump;
         public int UsedSkillSlot;
