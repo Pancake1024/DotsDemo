@@ -167,10 +167,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5989c8be3f5bd3740a0cc55a4c8310d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 5649366772244611645, guid: b455cf3498474254a800311f0a944382, type: 3}
-  PlayerAnimatedGO: {fileID: 1588724779004811319, guid: 8ee8a156daed53846a750ac7a892d237, type: 3}
+  UnitPrefab: {fileID: 5649366772244611645, guid: b455cf3498474254a800311f0a944382, type: 3}
+  UnitAnimatedGO: {fileID: 1588724779004811319, guid: 8ee8a156daed53846a750ac7a892d237, type: 3}
+  UnitType: 1
+  Health: 100
+  BornPosition: {x: 0, y: 0, z: 1}
+  BornRotation: {x: 0, y: 0, z: 0}
+  MoveSpeed: 4
+  RotateSpeed: 2
+--- !u!1 &1638922485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1638922487}
+  - component: {fileID: 1638922486}
+  m_Layer: 0
+  m_Name: SpawnMonster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1638922486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638922485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989c8be3f5bd3740a0cc55a4c8310d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitPrefab: {fileID: 5649366772244611645, guid: b455cf3498474254a800311f0a944382, type: 3}
+  UnitAnimatedGO: {fileID: 1588724779004811319, guid: ee47ab97cebbde54cb027f68a1a002b4, type: 3}
+  UnitType: 2
+  Health: 30
+  BornPosition: {x: 0, y: 0, z: 4}
+  BornRotation: {x: 0, y: 180, z: 0}
+  MoveSpeed: 4
+  RotateSpeed: 2
+--- !u!4 &1638922487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638922485}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 173533695}
+  - {fileID: 1638922487}

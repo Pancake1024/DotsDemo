@@ -9,43 +9,45 @@ namespace Pancake.ECSDemo
         /// <summary>
         /// 状态可以转换的状态字典
         /// </summary>
-        private static Dictionary<PlayerState, PlayerState[]> _State2StatesDict =
-            new Dictionary<PlayerState, PlayerState[]>()
+        private static Dictionary<UnitState, UnitState[]> _State2StatesDict =
+            new Dictionary<UnitState, UnitState[]>()
             {
-                { PlayerState.Idle ,new [] { PlayerState.Move ,PlayerState.Jumping,PlayerState.BeHit,PlayerState.CastSkill,PlayerState.Stunned,PlayerState.Invincible}},
-                { PlayerState.Move ,new [] { PlayerState.Idle ,PlayerState.Jumping,PlayerState.BeHit,PlayerState.CastSkill,PlayerState.Stunned,PlayerState.Invincible}},
-                { PlayerState.Jumping ,new [] { PlayerState.Jump_End,PlayerState.Stunned,PlayerState.Invincible}},
-                { PlayerState.Jump_End ,new [] { PlayerState.Idle ,PlayerState.Move,PlayerState.Jumping,PlayerState.BeHit,PlayerState.Stunned,PlayerState.Invincible}},
-                { PlayerState.CastSkill ,new [] { PlayerState.Idle,PlayerState.CastSkillEnd,PlayerState.Move,PlayerState.Jumping,PlayerState.Stunned,PlayerState.Invincible}},
-                { PlayerState.CastSkillEnd ,new [] { PlayerState.Idle, PlayerState.Move,PlayerState.CastSkill,PlayerState.Stunned,PlayerState.BeHit,PlayerState.Invincible}},
-                { PlayerState.BeHit ,new [] { PlayerState.Idle,PlayerState.Move,PlayerState.Jumping,PlayerState.Stunned,PlayerState.Invincible}},
-                { PlayerState.Stunned, new PlayerState[] {}},
-                { PlayerState.Invincible, new [] { PlayerState.Idle, PlayerState.Move, PlayerState.Jumping, PlayerState.Jump_End,PlayerState.BeHit ,PlayerState.CastSkill,PlayerState.CastSkillEnd}},
+                { UnitState.Idle ,new [] { UnitState.Move ,UnitState.Jumping,UnitState.BeHit,UnitState.CastSkill,UnitState.Stunned,UnitState.Invincible,UnitState.Die}},
+                { UnitState.Move ,new [] { UnitState.Idle ,UnitState.Jumping,UnitState.BeHit,UnitState.CastSkill,UnitState.Stunned,UnitState.Invincible,UnitState.Die}},
+                { UnitState.Jumping ,new [] { UnitState.Jump_End,UnitState.Stunned,UnitState.Invincible,UnitState.Die}},
+                { UnitState.Jump_End ,new [] { UnitState.Idle ,UnitState.Move,UnitState.Jumping,UnitState.BeHit,UnitState.Stunned,UnitState.Invincible,UnitState.Die}},
+                { UnitState.CastSkill ,new [] { UnitState.Idle,UnitState.CastSkillEnd,UnitState.Move,UnitState.Jumping,UnitState.Stunned,UnitState.Invincible,UnitState.Die}},
+                { UnitState.CastSkillEnd ,new [] { UnitState.Idle, UnitState.Move,UnitState.CastSkill,UnitState.Stunned,UnitState.BeHit,UnitState.Invincible,UnitState.Die}},
+                { UnitState.BeHit ,new [] { UnitState.Idle,UnitState.Move,UnitState.Jumping,UnitState.Stunned,UnitState.Invincible,UnitState.Die}},
+                { UnitState.Stunned, new UnitState[] {UnitState.Die}},
+                { UnitState.Invincible, new [] { UnitState.Idle, UnitState.Move, UnitState.Jumping, UnitState.Jump_End,UnitState.BeHit ,UnitState.CastSkill,UnitState.CastSkillEnd,UnitState.Die}},
+                { UnitState.Die, new UnitState[] {}},
             };
         
         /// <summary>
         /// 互斥状态字典
         /// </summary>
-        private static Dictionary<PlayerState, PlayerState[]> _State2MutuallyExclusiveDict =
-            new Dictionary<PlayerState, PlayerState[]>()
+        private static Dictionary<UnitState, UnitState[]> _State2MutuallyExclusiveDict =
+            new Dictionary<UnitState, UnitState[]>()
             {
-                { PlayerState.Idle ,new [] { PlayerState.Move , PlayerState.Jumping, PlayerState.Jump_End, PlayerState.BeHit,PlayerState.CastSkill}},
-                { PlayerState.Move ,new [] { PlayerState.Idle , PlayerState.Jumping, PlayerState.Jump_End, PlayerState.BeHit,PlayerState.CastSkill}},
-                { PlayerState.Jumping ,new [] { PlayerState.Idle ,PlayerState.Move,PlayerState.Jump_End,PlayerState.BeHit}},
-                { PlayerState.Jump_End ,new [] { PlayerState.Idle ,PlayerState.Move,PlayerState.Jumping,PlayerState.BeHit}},
-                { PlayerState.BeHit, new [] { PlayerState.Idle ,PlayerState.Move,PlayerState.Jumping, PlayerState.Jump_End}},
-                { PlayerState.Stunned, new [] { PlayerState.Idle ,PlayerState.Move,PlayerState.Jumping, PlayerState.BeHit}},
-                { PlayerState.Invincible, new PlayerState[] { }},
-                { PlayerState.CastSkill, new [] { PlayerState.Idle ,PlayerState.Move, PlayerState.Jumping, PlayerState.Jump_End, PlayerState.BeHit}},
-                { PlayerState.CastSkillEnd, new [] { PlayerState.Idle ,PlayerState.Move,PlayerState.Move,PlayerState.Jumping, PlayerState.Jump_End,PlayerState.CastSkill}},
+                { UnitState.Idle ,new [] { UnitState.Move , UnitState.Jumping, UnitState.Jump_End, UnitState.BeHit,UnitState.CastSkill,UnitState.Die}},
+                { UnitState.Move ,new [] { UnitState.Idle , UnitState.Jumping, UnitState.Jump_End, UnitState.BeHit,UnitState.CastSkill,UnitState.Die}},
+                { UnitState.Jumping ,new [] { UnitState.Idle ,UnitState.Move,UnitState.Jump_End,UnitState.BeHit,UnitState.Die}},
+                { UnitState.Jump_End ,new [] { UnitState.Idle ,UnitState.Move,UnitState.Jumping,UnitState.BeHit,UnitState.Die}},
+                { UnitState.CastSkill, new [] { UnitState.Idle ,UnitState.Move, UnitState.Jumping, UnitState.Jump_End, UnitState.BeHit,UnitState.Die}},
+                { UnitState.CastSkillEnd, new [] { UnitState.Idle ,UnitState.Move,UnitState.Move,UnitState.Jumping, UnitState.Jump_End,UnitState.CastSkill,UnitState.Die}},
+                { UnitState.BeHit, new [] { UnitState.Idle ,UnitState.Move,UnitState.Jumping, UnitState.Jump_End,UnitState.Die}},
+                { UnitState.Stunned, new [] { UnitState.Idle ,UnitState.Move,UnitState.Jumping, UnitState.BeHit,UnitState.Die}},
+                { UnitState.Invincible, new UnitState[] { }},
+                { UnitState.Die, new [] { UnitState.Idle, UnitState.Move, UnitState.Jumping, UnitState.Jump_End, UnitState.BeHit, UnitState.CastSkill, UnitState.CastSkillEnd, UnitState.Invincible, UnitState.Stunned}},
             };
         
-        public static bool TryAddState(ref PlayerStateComponent stateComp, PlayerState newState)
+        public static bool TryAddState(ref UnitStateComponent stateComp, UnitState newState)
         {
             if ((stateComp.State & newState) != 0) return false;
 
             //遍历所有单个状态
-            foreach (PlayerState singleState in Enum.GetValues(typeof(PlayerState)))
+            foreach (UnitState singleState in Enum.GetValues(typeof(UnitState)))
             {
                 //当前状态包含了单个状态
                 if ((stateComp.State & singleState) != 0)
@@ -100,47 +102,47 @@ namespace Pancake.ECSDemo
             return false;
         }
 
-        public static bool CanMove(PlayerStateComponent stateComp)
+        public static bool CanMove(UnitStateComponent stateComp)
         {
             var state = stateComp.State;
-            return (state & PlayerState.Idle) != 0 ||
-                   (state & PlayerState.Move) != 0 ||
-                   (state & PlayerState.Jump_End) != 0 ||
-                   (state & PlayerState.CastSkillEnd) != 0
+            return (state & UnitState.Idle) != 0 ||
+                   (state & UnitState.Move) != 0 ||
+                   (state & UnitState.Jump_End) != 0 ||
+                   (state & UnitState.CastSkillEnd) != 0
                    ;
         }
 
-        public static bool CanRotate(PlayerStateComponent stateComp)
+        public static bool CanRotate(UnitStateComponent stateComp)
         {
             var state = stateComp.State;
-            return (state & PlayerState.Idle) != 0 ||
-                   (state & PlayerState.Move) != 0 ||
-                   (state & PlayerState.Jump_End) != 0 ||
-                   (state & PlayerState.CastSkillEnd) != 0
+            return (state & UnitState.Idle) != 0 ||
+                   (state & UnitState.Move) != 0 ||
+                   (state & UnitState.Jump_End) != 0 ||
+                   (state & UnitState.CastSkillEnd) != 0
                 ;
         }
 
-        public static bool CanJump(PlayerStateComponent stateComp)
+        public static bool CanJump(UnitStateComponent stateComp)
         {
             var state = stateComp.State;
-            return (state & PlayerState.Idle) != 0 ||
-                   (state & PlayerState.Move) != 0 ||
-                   (state & PlayerState.Jump_End) != 0 ||
-                   (state & PlayerState.CastSkillEnd) != 0
+            return (state & UnitState.Idle) != 0 ||
+                   (state & UnitState.Move) != 0 ||
+                   (state & UnitState.Jump_End) != 0 ||
+                   (state & UnitState.CastSkillEnd) != 0
                 ;
         }
 
-        public static bool CanCastActiveSkill(PlayerStateComponent stateComp)
+        public static bool CanCastActiveSkill(UnitStateComponent stateComp)
         {
             var state = stateComp.State;
-            return (state & PlayerState.Idle) != 0 ||
-                   (state & PlayerState.Move) != 0 ||
-                   (state & PlayerState.Jump_End) != 0 ||
-                   (state & PlayerState.CastSkillEnd) != 0
+            return (state & UnitState.Idle) != 0 ||
+                   (state & UnitState.Move) != 0 ||
+                   (state & UnitState.Jump_End) != 0 ||
+                   (state & UnitState.CastSkillEnd) != 0
                 ;
         }
 
-        public static bool CanCastPassiveSkill(PlayerStateComponent stateComp)
+        public static bool CanCastPassiveSkill(UnitStateComponent stateComp)
         {
             var state = stateComp.State;
 

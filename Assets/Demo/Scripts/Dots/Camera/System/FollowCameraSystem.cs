@@ -9,7 +9,7 @@ namespace Pancake.ECSDemo
     {
         protected override void OnCreate()
         {
-            RequireForUpdate<PlayerInputComponent>();
+            RequireForUpdate<UnitInputComponent>();
             RequireForUpdate<FollowCameraTag>();
             RequireForUpdate<PlayerFollowCameraManaged>();
         }
@@ -21,8 +21,10 @@ namespace Pancake.ECSDemo
             var cameraComponent = EntityManager.GetComponentData<CameraComponent>(cameraEntity);
 
             Entities.WithoutBurst().ForEach(
-                (ref LocalTransform localTransform, in PlayerInputComponent input ) =>
+                (ref LocalTransform localTransform, in UnitInputComponent input ,in UnitAttributeComponent attributeComp) =>
                 {
+                    if (attributeComp.UnitType != UnitType.Player) return;
+                    
                     followCameraManaged.FollowCamera.transform.position =
                         localTransform.Position + followCameraManaged.Offset.x * localTransform.Forward() +
                         new float3(0, followCameraManaged.Offset.y, followCameraManaged.Offset.z);

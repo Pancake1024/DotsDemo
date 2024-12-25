@@ -1,6 +1,6 @@
 ﻿namespace Pancake.ECSDemo
 {
-    public enum PlayerAnimState
+    public enum UnitAnimState
     {
         None,
         Idle,
@@ -12,7 +12,7 @@
         Die,
     }
 
-    public enum PlayerState
+    public enum UnitState
     {       
         None = 0,
         Idle = 1 << 0,
@@ -24,5 +24,13 @@
         CastSkillEnd = 1 << 6,
         Stunned = 1 << 7,
         Invincible = 1 << 8,
+        Die = 1 << 9,
+    }
+    
+    public enum UnitType
+    {
+        None,
+        Player,
+        Monster,
     }
 }
