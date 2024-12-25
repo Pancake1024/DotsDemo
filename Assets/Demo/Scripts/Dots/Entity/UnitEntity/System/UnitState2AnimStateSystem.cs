@@ -18,7 +18,7 @@ namespace Pancake.ECSDemo
         protected override void OnUpdate()
         {
             var job = new PlayerState2AnimStateJob();
-            job.ScheduleParallel(Dependency).Complete();
+            job.ScheduleParallel();
         }
     }
 

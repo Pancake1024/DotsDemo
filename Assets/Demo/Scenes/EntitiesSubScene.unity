@@ -207,7 +207,7 @@ MonoBehaviour:
   UnitPrefab: {fileID: 5649366772244611645, guid: b455cf3498474254a800311f0a944382, type: 3}
   UnitAnimatedGO: {fileID: 1588724779004811319, guid: ee47ab97cebbde54cb027f68a1a002b4, type: 3}
   UnitType: 2
-  Health: 30
+  Health: 20
   BornPosition: {x: 0, y: 0, z: 4}
   BornRotation: {x: 0, y: 180, z: 0}
   MoveSpeed: 4

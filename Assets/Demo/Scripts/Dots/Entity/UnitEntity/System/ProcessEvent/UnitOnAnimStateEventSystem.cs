@@ -16,9 +16,7 @@ namespace Pancake.ECSDemo
         protected override void OnUpdate()
         {
             var job = new OnAnimStateEventJob();
-            
-            var jobHandle = job.ScheduleParallel(Dependency);
-            jobHandle.Complete();
+            job.ScheduleParallel();
         }
     }
 

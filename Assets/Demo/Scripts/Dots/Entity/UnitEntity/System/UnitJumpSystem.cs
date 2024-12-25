@@ -23,7 +23,7 @@ namespace Pancake.ECSDemo
             {
                 deltaTime = SystemAPI.Time.DeltaTime,
             };
-            job.ScheduleParallel(Dependency).Complete();
+            job.ScheduleParallel();
         }
     }
 
@@ -39,7 +39,6 @@ namespace Pancake.ECSDemo
             in UnitOnGroundComponent onGroundComp,
             in UnitAttributeComponent attributeComp)
         {
-            var state = stateComp.State;
             //玩家按下跳跃键，且在地面上，且没有在跳跃
             if (input.IsJump && onGroundComp.IsOnGround && StateUtility.CanJump(stateComp))
             {

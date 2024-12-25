@@ -15,7 +15,7 @@ namespace Pancake.ECSDemo
         protected override void OnUpdate()
         {
             var job = new UnitOnGroundJob();
-            job.ScheduleParallel(Dependency).Complete();
+            job.ScheduleParallel();
         }
     }
 

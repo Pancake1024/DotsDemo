@@ -20,8 +20,7 @@ namespace Pancake.ECSDemo
             {
                 deltaTime = SystemAPI.Time.DeltaTime,
             };
-            var jobHandle = job.ScheduleParallel(Dependency);
-            jobHandle.Complete();
+            job.ScheduleParallel();
         }
     }
     

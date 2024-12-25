@@ -15,9 +15,7 @@ namespace Pancake.ECSDemo
         protected override void OnUpdate()
         {
             var job = new OnDamageEvtJob();
-
-            var jobHandle = job.ScheduleParallel(Dependency);
-            jobHandle.Complete();
+            job.ScheduleParallel();
         }
     }
 

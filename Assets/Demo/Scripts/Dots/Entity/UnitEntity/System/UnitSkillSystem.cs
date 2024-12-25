@@ -29,9 +29,6 @@ namespace Pancake.ECSDemo
                 }
             }
 
-            // 获取所有 Entity 到数组中
-            var allEntities = entityQuery.ToEntityArray(Allocator.TempJob);
-            
             var ecb = new EntityCommandBuffer(Allocator.TempJob);
 
             var job = new UnitSkillJob()

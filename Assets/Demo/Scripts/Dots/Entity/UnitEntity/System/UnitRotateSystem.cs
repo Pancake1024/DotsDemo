@@ -22,7 +22,7 @@ namespace Pancake.ECSDemo
             {
                 deltaTime = SystemAPI.Time.DeltaTime,
             };
-            job.ScheduleParallel(Dependency).Complete();
+            job.ScheduleParallel();
         }
     }
     
